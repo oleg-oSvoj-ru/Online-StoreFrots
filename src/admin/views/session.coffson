@@ -1,0 +1,26 @@
+{
+    map: (doc)->
+        if doc.type == 'session'
+            tmp = {}
+            for k,v of doc.session.basket.val
+                tmp[k]             = {}
+                tmp[k]["artikul"]  = v.artikul[v.position]
+                tmp[k]["price"]    = v.price[v.position]
+                tmp[k]["count"]    = v.count
+                tmp[k]["options"]  = v.options[v.position]
+            doc.session.basket.val = tmp
+            if doc.session.orders
+                a = []
+                for order in doc.session.orders
+                    tmp = {}
+                    for k,v of order.val
+                        tmp[k]             = {}
+                        tmp[k]["artikul"]  = v.artikul[v.position]
+                        tmp[k]["price"]    = v.price[v.position]
+                        tmp[k]["count"]    = v.count
+                        tmp[k]["options"]  = v.options[v.position]
+                    order.val= tmp
+                    a.push order
+                doc.session.orders = a
+            emit(doc._id, doc)
+}

@@ -1,0 +1,15 @@
+{
+    map: (doc)->
+        if doc.name
+            for i,item of doc.name
+                for k,v of doc.options[i]
+                    if k != "коллекция"
+                       item = item + ", " + v
+                emit doc.artikul[i], {"url": item, "i": i}
+                emit "*",  {"url": item, "i": i}
+                if ((1 - doc.price[i]/doc.realPrice[i])*100).toFixed(0) > 0
+                    emit 'скидка '+((1 - doc.price[i]/doc.realPrice[i])*100).toFixed(0), {"url": item, "i": i}
+
+    reduce: '_count'
+}
+

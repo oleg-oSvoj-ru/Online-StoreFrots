@@ -1,0 +1,59 @@
+- main = {}
+- main = locals.req( './src/site/_attachments/main.json')
+include ./mixin/main.pug
+doctype html
+html
+    head
+        title Migliore
+        link(rel="stylesheet" href="/css/normalize.css")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+        meta(charset="utf-8")
+    body
+        #main
+           header
+              +logo
+           content
+             block content
+              #slide.g4
+                 .collection(v-cloak v-for="item of items" v-bind:style="'background-image: url(\"/id/' + item.value._id + '/orig_1.webp\")'")
+                     .blockZ
+                         a(href="/Заказ")
+                             .order Получить консультацию
+                         p.price {{item.value.price}}
+                     img.left(src="/img/left.svg" @click="slideClick('Left')")
+                     img.right(src="/img/right.svg" @click="slideClick('Right')")
+                     img.watermark(src="/img/watermark.png")
+                     h2(v-html="item.value.name[0]")
+                     .deskription(v-html="item.value.description[0]")
+              .catalog.g4
+                  h2.g4 
+        #app
+        footer
+               hr
+               h4 Дополнительная информация
+               ul
+                  li
+                     a(href="/Политика") Политика конфиденциальности
+        .system.g4.hide
+             block system
+                 .formOrder.g4.hide
+                   .form
+                     h2.g3 Получить консультацию по комплекту:
+                     h3.g3 
+                     label.g3 Ваше имя:
+                     input#name.g3(type="text" name="name") 
+                     label.g3 Номер телефона:
+                     input#phone.g3(type="text" name="phone")
+                     .sendButton.g3 Получить консультацию
+                           table.basket.hide
+        link(rel="preconnect" href="https://fonts.gstatic.com")
+        link(href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet")
+        link(rel="stylesheet" href="/css/template.css")
+        link(rel="stylesheet" href="/css/main.css")
+        script()
+        //script(src="/js/lib/main.js")
+        script(src="/js/libVjs.js")
+        script(src="//cdn.jsdelivr.net/pouchdb/latest/pouchdb.min.js")
+        script(src="/js/mainV.js")
+        block script
+           script(src="/js/indexV.js")

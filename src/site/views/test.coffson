@@ -1,0 +1,7 @@
+{
+    map: (doc)->
+        if doc.name
+            doc.options.group = doc.group
+            emit doc.options, doc.images
+    reduce: '_count'
+}

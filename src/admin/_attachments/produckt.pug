@@ -1,0 +1,19 @@
+extends index.pug
+block content
+          #produckt
+                .imgFull.hide
+                     img( :src="'/id/'+item._id+'/orig_1.webp'" v-cloak)
+                .producktImg.g2(:style="'background-image: url(\"/id/' + item._id + '/orig_1.webp\")'" v-cloak)
+                .producktData.g2(v-cloak)
+                         h2(v-html="item.name[0]" v-cloak)
+                         .deskription(v-if="item.description" v-html="item.description[0]" v-cloak)
+                         table.options(v-cloak)
+                            tr(v-for="line of item.param" v-cloak v-if="line.vallue != undefined && line.name != 'Страна' ")
+                               th {{ line.name }}
+                               td {{ line.vallue }}
+                         p.g2.price(v-if="item" v-cloak) {{ item.price }}
+                         .order.g2(v-if="plus" v-on:click="orderClick" v-cloak) +1
+                         .order.g2(v-if="!plus" v-on:click="orderClick" v-cloak) B Корзину
+block system
+block script
+        script(src="/js/producktV.js")

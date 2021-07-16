@@ -1,0 +1,46 @@
+mixin menu-item(link,title)
+    a(href=link)
+       li(style!=attributes.style class!=attributes.class)  #{title}
+mixin menu-itemB(link,title)
+    span
+       li(style!=attributes.style class!=attributes.class)  #{title}
+
+
+mixin menu_main
+    menu.g3.main_menu
+        each item in main.menu
+             +menu-item(item.href,item.name)
+    menu.g1.user_menu
+        //+menu-item("#Поиск",  "")(style="background-image: url(/img/picto/search.svg)")
+        //+menu-item("#Консультация","")(style="background-image: url(/img/picto/phone.svg)")
+        +menu-item("/Блог","Блог") //(style="background-image: url(/img/picto/phone.svg)")
+        span#basket(v-cloak  @click="show = !show")
+          +menu-itemB("#Корзина","{{ count }}")(v-cloak style="background-image: url(/img/picto/basket_k.svg)" class="basket")
+          table.g2(v-cloak v-if="show")
+            tr.noline
+                   td.c3(colspan="2")
+                   td.c4(colspan="4")
+            tr.row(v-for="item of items")
+                   td.img(v-bind:style="'background-image: url(\"/id/' + item._id + '/orig_1.webp\")'")
+                   td.name(v-html="item.name[0]")
+                   td.price(v-html="probel(item.price)")
+                   td.count(v-html="item.count")
+                   td.updw
+                       span.plus(v-on:click="ClickPlus(item._id)") +
+                       br
+                       span.minus(v-on:click="ClickMinus(item._id)") -
+                   td.summ(v-html="probel(item.count*item.price)")
+            tr.itog.noline
+                   th.itog(colspan="3") Итого:
+                   td.itog.sum(v-html="probel(summ)" colspan="3")
+            tr.noline
+                   td(colspan="2") 
+                   td(colspan="4") 
+                       a(href="/Заказ" v-cloak v-if="!order")
+                           .order Отправить заявку
+mixin menu_top
+    menu.top_menu
+        each item in main.topMenu
+             +menu-item(item.href,item.name)    
+            
+        

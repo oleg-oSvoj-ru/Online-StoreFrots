@@ -1,0 +1,10 @@
+extends main.pug
+block content
+    #index.catalog
+        a.g2(v-for="item of items" :href="'/' + item.key")
+                .razdel(:style="'background-image: url(\"/id/' + item.key + '/img/000.webp\")'" v-cloak)
+                    h3(v-html="item.key" v-cloak)
+                        p(v-if="item" v-html="item" v-cloak)
+block system
+block script
+        script(src="/js/indexV.js")

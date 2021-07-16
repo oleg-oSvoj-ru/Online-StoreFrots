@@ -1,0 +1,14 @@
+extends main.pug
+block content
+              #slide.g4
+                 .collection(v-cloak v-for="item of items" v-bind:style="'background-image: url(\"/id/' + item.value._id + '/orig_1.webp\")'")
+                     img.left(src="/img/left.svg" @click="slideClick('Left')")
+                     img.right(src="/img/right.svg" @click="slideClick('Right')")
+                     img.watermark(src="/img/watermark.png")
+                     h2(v-html="item.value.name[0]")
+                     .deskription(v-html="item.value.description[0]")
+              .catalog.g4
+                  h2.g4 
+block system
+block script
+      script(src="/js/indexV.js")

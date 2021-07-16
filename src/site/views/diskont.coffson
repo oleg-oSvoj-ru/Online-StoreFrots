@@ -1,0 +1,8 @@
+{
+    map: (doc)->
+        if doc.name
+            for item,i in doc.artikul
+                if ((1 - doc.price[i]/doc.realPrice[i])*100).toFixed(0) > 0
+                  emit('скидка '+((1 - doc.price[i]/doc.realPrice[i])*100).toFixed(0), i)
+    reduce: '_count'
+}

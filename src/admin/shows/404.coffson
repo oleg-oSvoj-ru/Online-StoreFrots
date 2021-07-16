@@ -1,0 +1,4 @@
+(doc, req) ->
+  code: 404
+  title: "404 Not Found"
+  content: "404.html " + req.headers.Host

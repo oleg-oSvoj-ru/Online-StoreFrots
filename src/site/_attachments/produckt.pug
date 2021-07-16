@@ -1,0 +1,56 @@
+extends index.pug
+block content
+        #produckt( v-cloak)
+            h1.g4
+                a.grey(href="/") начало 
+                span.grey / 
+                a.grey(:href="'/' + item.group") {{ item.group }}
+                span.grey /
+                | {{ item.name[position]}}
+            div.g4
+                .imgFull(v-if="showImg" @click="showImg = !showImg")
+                    div( v-bind:style="'background-image: url(\"/id/' +item._id +'/' + item.artikul[position] + '/' + img + '\")'" v-cloak)
+                .img.g2
+                    .producktImg(v-bind:style="'background-image: url(\"/id/' +item._id +'/' + item.artikul[position] + '/' + img + '\")'" v-cloak @click="showImg = !showImg")
+                    .preView
+                         .images.g4(v-for="(val, key) of item.images[item.artikul[position]]"  v-bind:style="'background-image: url(\"/id/'+item._id+'/'+item.artikul[position]+'/'+val+'\"' " @click="img = val")
+                .producktData.g2(v-cloak)
+                        //h2(v-html="item.name[position]" v-cloak)
+                        h4 Описание
+                        .deskription(v-if="item.description[position]" v-html="item.description[position]" v-cloak)
+                        .selectP()
+                            table.propp
+                                tr(v-for="(val,key) of prop" v-if="true")
+                                    th {{ key }}
+                                    td
+                                        label(v-for="(v,k) of val" v-bind:id="v" )
+                                            input( type="radio" v-bind:name="key" v-bind:value="v" v-bind:checked="cheked( position, v, key)" v-on:click="chekedClick(v,key)")
+                                            span.mult(v-if="Object.keys(val).length > 1" v-bind:class="noValue(position, v, key)") {{ k }}
+                                            span(v-if="Object.keys(val).length == 1") {{ k }}
+
+                        p.g4.realPrice(v-if="+item.realPrice[position] > +item.price[position]" v-cloak)
+                            span {{ number_format(item.realPrice[position], 0, ',', '&#160;') }}
+                        p.g4.action(v-if="+item.realPrice[position] > +item.price[position]" v-cloak) сегодня скидка: 
+                            span {{ ((1 - item.price[position]/item.realPrice[position])*100).toFixed(0) }}%
+                        p.g2.price(v-if="item" v-cloak) {{ number_format(item.price[position], 0, ',', '&#160;') }}
+                        .order.g2(v-if="plus" v-on:click="orderClick" v-cloak) +1
+                        .order.g2(v-if="!plus" v-on:click="orderClick" v-cloak) B Корзину
+            div.g4.catalog(v-cloak v-if="Object.keys(actionData).length > 0 ")
+                h2 Акции по товару:
+                a.g1( v-for="(v,k) of actionData" v-bind:id="v" v-bind:href="'/Блог/' + k " )
+                    .razdel(v-bind:style="'background-image: url(\"/id/' + k + '/' + '/img/001.webp\")'")
+                        h3(v-html="k")
+            div.g4.catalog(v-cloak v-if="Object.keys(ratingData).length > 0 ")
+                h2 Отзывы и статьи по товару:
+                a.g1( v-for="(v,k) of ratingData" v-bind:id="v" v-bind:href="'/Блог/' + k " )
+                    .razdel(v-bind:style="'background-image: url(\"/id/' + k + '/' + '/img/001.webp\")'")
+                        h3(v-html="v._id")
+            div.g4.catalog(v-cloak v-if="Object.keys(collectionData).length > 0 ")
+                h2 Ещё в коллекции:
+                a.g1( v-for="(v,k) of collectionData"  v-bind:href="'/'+v.doc.group + '/' + v.value.url " )
+                    .razdel(v-bind:style="'background-image: url(\"/id/' + v.doc.id + '/' + v.doc.artikul[v.value.i] + '/' + v.doc.images[v.doc.artikul[v.value.i]][0] + '\")'")
+                        p.price {{v.doc.price[v.value.i]}}
+                        h3(v-html="v.doc.name[v.value.i]")
+block system
+block script
+        script(src="/js/producktV.js")

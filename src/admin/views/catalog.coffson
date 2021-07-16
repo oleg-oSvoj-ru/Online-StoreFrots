@@ -1,0 +1,78 @@
+{
+    map: (doc)->
+        if (doc.name[0].search(/.*омпоз.*/gi) != -1 or doc.description[0].search(/.*абор.*/gi) != -1) and \
+               doc.name[0].search(/.*полок.*/gi) == -1 and \
+               doc.name[0].search(/.*профилей.*/gi) == -1 and \
+               doc.name[0].search(/.*Шкаф.*/gi) == -1 and \
+               doc.name[0].search(/.*стол.*/gi) == -1 and \
+               doc.name[0].search(/.*умба.*/gi) == -1 and \
+               doc.name[0].search(/.*елаж.*/gi) == -1 and \
+               doc.description != undefined and doc.price != undefined and \
+               (doc.name[0].search(/.*solo .*/gi) != -1 or doc.name[0].search(/.*cоло .*/gi) != -1)
+            doc.src = "/" + doc._id + "/orig_1.webp"
+            name = "Слайдер"
+            
+        if (doc.name[0].search(/.*омпоз.*/gi) != -1 or doc.description[0].search(/.*абор.*/gi) != -1) and \
+               doc.name[0].search(/.*пальн.*/gi) != -1 and \
+               (doc.name[0].search(/.*solo .*/gi) != -1 or doc.name[0].search(/.*cоло .*/gi) != -1)
+            doc.src = "/" + doc._id + "/orig_1.webp"
+            name = "Спальни"
+
+        if (doc.name[0].search(/.*омпоз.*/gi) != -1 or doc.description[0].search(/.*абор.*/gi) != -1) and \
+               (doc.name[0].search(/.*етск.*/gi) != -1 or doc.name[0].search(/.*одростков.*/gi) != -1 ) and \
+               (doc.name[0].search(/.*solo .*/gi) != -1 or doc.name[0].search(/.*cоло .*/gi) != -1)
+            doc.src = "/" + doc._id + "/orig_1.webp"
+            name = "Детские"
+
+
+        if doc.name[0].search(/.*остин.*/gi) != -1 and \
+               (doc.name[0].search(/.*solo .*/gi) != -1 or doc.name[0].search(/.*cоло .*/gi) != -1)
+            doc.src = "/" + doc._id + "/orig_1.webp"
+            name = "Гостиные"
+
+        if doc.name[0].search(/.*ванн.*/gi) != -1 and \
+               (doc.name[0].search(/.*solo .*/gi) != -1 or doc.name[0].search(/.*cоло .*/gi) != -1)
+            doc.src = "/" + doc._id + "/orig_1.webp"
+            name = "Ванные"
+
+
+
+        if  doc.name[0].search(/.*шкаф.*/gi) != -1  and doc.name[0].search(/.* тумб.*/gi) == -1 and \
+               doc.name[0].search(/.*полок.*/gi) == -1 and \
+               doc.name[0].search(/.*профилей.*/gi) == -1 and \
+               (doc.name[0].search(/.*solo .*/gi) != -1 or doc.name[0].search(/.*cоло .*/gi) != -1)
+            doc.src = "/" + doc._id + "/orig_1.webp"
+            name = "Шкафы"
+
+
+        if doc.name[0].search(/.*олонк.*/gi) != -1 and \
+               (doc.name[0].search(/.*solo .*/gi) != -1 or doc.name[0].search(/.*cоло .*/gi) != -1)
+            doc.src = "/" + doc._id + "/orig_1.webp"
+            name = "Колонки"
+
+
+        if doc.name[0].search(/.*умб.*/gi) != -1 and \
+               (doc.name[0].search(/.*solo .*/gi) != -1 or doc.name[0].search(/.*cоло .*/gi) != -1)
+            doc.src = "/" + doc._id + "/orig_1.webp"
+            name = "Тумбы"
+
+
+        if doc.name[0].search(/.*тол.*/gi) != -1 and \
+               (doc.name[0].search(/.*solo .*/gi) != -1 or doc.name[0].search(/.*cоло .*/gi) != -1)
+            doc.src = "/" + doc._id + "/orig_1.webp"
+            name = "Столы"
+
+
+        if doc.name[0].search(/.*роват.*/gi) != -1  and \
+               (doc.name[0].search(/.*solo .*/gi) != -1 or doc.name[0].search(/.*cоло .*/gi) != -1)
+            doc.src = "/" + doc._id + "/orig_1.webp"
+            name = "Кровати"
+
+
+        if doc.name[0].search(/.*олк.*/gi) != -1  and \
+               (doc.name[0].search(/.*solo .*/gi) != -1 or doc.name[0].search(/.*cоло .*/gi) != -1)
+            doc.src = "/" + doc._id + "/orig_1.webp"
+            name = "Полки"
+        if name 
+            emit name, doc
+}

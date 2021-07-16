@@ -1,0 +1,13 @@
+(head, req) ->
+      start headers: 'Content-Type': 'text/plain;charset=utf-8'
+      send 'id\tname\tdescription\tartikul\trealPrice\tprice\tgroup\toptions\tcomplekt\n'
+
+      while row = getRow()
+          doc = row.value
+          send JSON.stringify(row)
+          options = ""
+          for val,key of doc.options
+              options = options + key + ":" + val + "|"
+          send row.id + '\t' + doc.name+'\t'+doc.description+'\t'+doc.artikul+'\t'+doc.realPrice+'\t'+doc.price+'\t'+doc.group+'\t'+options+'\t'+doc.complekt+'\n'
+
+

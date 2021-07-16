@@ -1,0 +1,7 @@
+{
+    map: (doc)->
+        #{ slugify } = require 'lib/bundle.esm.min'
+        if doc.artikul
+            emit doc.id, doc
+
+}

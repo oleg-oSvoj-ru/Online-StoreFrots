@@ -1,0 +1,55 @@
+[
+
+  {
+    "from"  : "/id/*"
+    "to"    : "../../*"
+  }
+  {
+    "from"  : encodeURI("/Заказ")
+    "to"    : "/order.html"
+  }
+  {
+    "from"  : encodeURI("/Блог")
+    "to"    : "/blog.html"
+  }
+  {
+    "from"  : encodeURI("/Блог/:page")
+    "to"    : "/page.html"
+  }
+  {
+    "from"  : encodeURI "/politic"
+    "to"    : "/politic.html"
+  }
+  {
+    "from"  : "/js/*"
+    "to"    : "/js/*"
+  }
+  {
+    "from"  : "/css/*"
+    "to"    : "/css/*"
+  }
+  {
+    "from"  : "/img/*"
+    "to"    : "/img/*"
+  }
+  {
+    "from"  : ""
+    "to"    : "/index.html"
+  }
+  {
+    "from"  : "/:catalog/:id"
+    "to"    : "/produckt.html"
+  }
+  {
+    "from"  : "/:catalog"
+    "to"    : "/catalog.html"
+  }
+  
+  { from: '/not-found', to: '_show/not_found' },
+  
+  {
+    "from"  : "/*"
+    "to"    : "/*"
+  }
+]
+ 

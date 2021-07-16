@@ -1,0 +1,644 @@
+body
+    /*font-family Roboto, Arial, sans-serif/**/
+    font-family: ubuntu;
+    font-weight: lighter;
+    font-size 12px/**/
+    width 98%
+    margin auto
+    background-image none /**/
+.hide
+    display none
+.g1
+    width: 46%;
+    display: inline-block;
+.g1, .g2, .g3, .g4
+    display: inline-table;
+#menu
+        max-width 1280px
+        margin auto
+[v-cloak]
+    display: none
+#blog
+    .producktImg 
+        /*background-size: contain/**/
+.basket
+    tbody
+        display: inline
+    text-shadow none
+
+    span
+        cursor: pointer
+        text-shadow none
+    .close
+        position fixed
+        top 0.5em
+        right 0.5em
+        height 3em
+        width 3em
+        z-index: 1010;
+        background-image url("/img/picto/close-black.svg")
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    .name
+        span
+            cursor: pointer
+            display: none;
+            text-align: left;
+    table
+        font-size 8px/**/
+        position: fixed;
+        width: 100%;
+        margin: 0;/**/
+        color black
+        overflow: auto;
+        top 0
+        right 0
+        height 100%
+        /*left 0/**/
+        font-size: 18px;
+        background-image: url(/img/logo.webp);
+        background-repeat: no-repeat;
+        background-size: 30em;
+        background-position: 10em 50%;
+        background-color: #f5f5f5f0;
+        z-index: 10;
+        border-radius: 0.3em;
+        font-size: 0.9em;
+        padding: 3em;
+        display: block;
+        /*border: 1em solid rgba(255,255,255,.01);/**/
+        /*border: 0.5px solid black;/**/
+        /*padding: 1em;/**/
+        tr
+            /*border-bottom: 1px solid #333;/**/
+            display table-row-group
+            &.noline
+                border none
+                background none
+            &:nth-child(odd)
+                background: #d3d3d385;
+            td
+                width: max-content
+                /*padding 0.9em/**/
+
+            .c3
+                width 70%
+            .c4
+                width 30%/**/
+        .img
+            width:    20%
+            min-width: 10em
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat
+        .name
+            padding 0 0.9em
+        .price,.summ
+            font-size 1em
+            background none
+            color black
+            width: max-content;
+            text-align right
+            &::before
+                content ""
+                font-size 0.8em
+            &::after
+                content "\00A0руб."
+                font-size 0.8em
+        .count
+            text-align right
+            width: 2em;
+        .order
+            margin 0
+            float right
+        .updw
+            color grey
+            font-size 2.5em
+            teext-align left
+            cursor: pointer
+            margin: 0;
+            padding: 0;
+            .minus
+                line-height: 1.5em;
+                vertical-align: top;
+                padding-top 0em
+            .plus
+                line-height: 0.5em;
+                padding-bottom 0em
+                vertical-align: bottom;
+            span
+                /*padding 0.5em/**/
+                z-index: 100
+                &:hover
+                    color red
+        .itog
+            text-align right
+            &.sum
+                &::after
+                    content "\00A0руб."
+                    font-size 0.8em
+.pMenu
+    background-color: #53475185;
+    font-size: x-large;
+    display: block;
+    position: absolute;
+    text-align: center;
+    right: 2em;
+menu
+    li
+         list-style: none
+         padding 0 0.5em
+         font-size: 1.3em
+    span
+        text-shadow: #534751 1px 1px 5px;
+        display: ruby-base
+    .phone
+        margin   0  0em
+        font-size  2em
+    &.main_menu
+         margin auto
+         text-align center
+    &.user_menu
+         margin auto
+         margin-top: -1em
+         padding: 0 1em;
+         text-align right
+         color white
+         #menuButton,#basketButton
+            padding: 0 0 0 2em;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: 0% 65%;
+            font-size: x-large;
+         li
+             margin: 0 0.5em;
+             background-position: left center;
+             background-size: contain;
+             background-repeat: no-repeat;
+             width  max-content
+             &.basket
+                  padding-left 1.7em
+                  background-size: contain
+
+content
+    min-height: 60em;
+    margin-top 10em
+.catalog
+    text-align:      center
+    text-align-last: center
+    
+    h2
+        font-size: 1em;
+        margin: 3% 1% 1%;
+        text-align: left;
+        font-weight: 10;
+    h3
+        text-align center
+        font-size: 1em;
+        margin: 1% auto;
+        padding: 0.3em;
+        background-image: url(/img/podlogka.svg);
+        background-position: center;
+        background-size: cover;
+        height: max-content;
+        /*position: absolute;/**/
+        margin-top: -5em;
+        width: 98%;
+    h3.raz
+        text-align center
+        font-size: 3.5em;
+        padding: 0.3em;
+        background-image: url(/img/podlogka.svg);
+        background-position: center;
+        background-size: cover;
+    .razdel
+        padding-top: 35em;
+        background-image: url(/id/8667/orig_1.webp);
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-color: white;
+        border-radius: 0.5em;
+        height: min-content;
+        &.ff
+            background-size: cover;
+    .price
+        position: absolute;
+        margin-top: -10em;
+     .deskription
+        max-height: 21em;
+        height: min-content;
+        p
+           height: min-content;
+#produckt
+     .catalog
+          .razdel
+               padding-top: 20em;
+          .price
+               margin-top: -5em;
+#index.catalog
+          .razdel
+               padding-top: 20em;
+          .price
+               margin-top: -5em;
+.realPrice
+        color: gray;
+        font-size: 2em;
+        display: block;
+        text-align: center;
+        span
+            text-decoration-style: solid;
+            text-decoration-color: red;
+            text-decoration-line: line-through;
+        &::before
+           content "обычная цена:\00A0"
+           font-size 0.8em
+        &::after
+           content "\00A0руб."
+           font-size 0.8em
+        + .action
+            color: #c30030;
+            text-align: center;
+            font-size: 1.5em;
+            padding: 0;
+            margin: 0;
+            font-weight: 400;
+            span
+                padding o 1em
+                font-size: 1.5em;
+.price
+        background-image: url(/img/podlogkaRed.svg);
+        background-position: center; 
+        text-align: center;
+        font-size: 2em;
+        width: max-content;
+        margin auto
+        padding: 0.5em;
+        background-size: 190% 190%;
+        color: white;
+        &::before
+           content "цена:\00A0"
+           font-size 0.8em
+        &::after
+           content "\00A0руб."
+           font-size 0.8em
+.order
+        font-size: 2em;
+        text-align: center;
+        width: max-content;
+        background-image: url(/img/podlogka.svg);
+        background-position: center center;
+        background-size: cover;
+        box-shadow: 0 0 5px rgba(0,0,0,.5);
+        padding: 0.5em 1em;
+        margin 0 auto
+        cursor: pointer
+        &:hover
+            box-shadow: 0 0 10px rgba(0,0,0,.5)/**/
+            cursor: pointer
+.collection
+    height   11em
+    padding-top: 33em;
+    background-image: url(/id/8667/orig_1.webp);
+    background-size: cover;
+    background-position: center center;
+    border-radius: 0.5em;
+    display none
+    &:first-child
+        display block
+    .watermark
+        position: absolute;
+        height: 70%;
+        float: right;
+        display: block;
+        top: 30%;
+        right: 10%;
+    .left,.right
+           height: 5em;
+           margin-top: -15em;
+           border-radius 50%
+           box-shadow: 0 0 5px rgba(0,0,0,0.5)/**/
+           cursor: pointer
+           &:hover
+               box-shadow: 0 0 10px rgba(0,0,0,0.5)/**/
+    .left
+           float: right;
+           margin-right: -2em;
+    .right
+           float: left;
+           margin-left: -2em;
+    h2
+        text-align center
+        font-size: 1.5em;
+        margin: 0.5em auto;
+        padding: 0.3em;
+        width: max-content;
+        background-image: url(/img/podlogka.svg);
+        background-position: center;
+        background-size: cover;
+        max-width: 98%;
+.deskription
+        text-align center
+        margin auto
+        width 90%
+        font-size: 1.2em;
+        max-height: 13em;
+        overflow: hidden;
+        margin: 0.5em auto;
+        padding: 0.3em;
+        background-image: url(/img/podlogka.svg);
+        background-position: center; 
+        background-size: cover;
+        dysplay: none
+.imgFull
+        position: fixed;
+        top 0
+        left 0
+        padding 0
+        margin 0
+        width 100%
+        height 100%
+        background-color rgba(0,0,0,0.5)
+        text-align center
+        line-height 100%
+        z-index 2000
+        img
+           height 90%
+           margin-top: 5%;
+.producktImg
+        padding-top: 35em;
+        background-image: url(/logo.webp);
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-color: white;
+        border-radius: 0.5em;
+        height: 1em;
+        cursor: pointer
+.preView
+    text-align: center
+    cursor: pointer;
+.red
+    color red
+.select > *
+    display: inline-flex;
+    vertical-align: unset;
+    cursor: pointer;
+.select
+    margin-bottom: 1em;
+.more
+    background-image: url(/img/picto/more.svg);
+    background-position: center bottom;
+    text-align: center;
+    background-size: 2em;
+    background-repeat: no-repeat;
+    height: 5em;
+    margin: 0.5em;
+    
+.images
+    height: 5em;
+    width: 5em;
+    float: none;
+    display: inline-block;
+    margin-top: -7em;
+    border: solid 0.2em white;
+    border-radius: 0.2em;
+    background-size: cover;
+.producktData
+        float: right;
+        h2
+             font-size: 1.5em
+             text-align left
+        .deskription
+             text-align justify
+             height auto
+        input
+            display: none
+            cursor: pointer
+            + span
+                padding: 0em 0.4em
+                margin: 0.1em 0.3em
+            + span.mult
+                border-style: ridge
+                display: inline-block
+                cursor: pointer
+                border-width: 1px
+                cursor: pointer
+                z-index 10
+                -webkit-box-shadow:  1px 1px 2px 0px rgba(50, 50, 50, 0.75);
+                -moz-box-shadow:     1px 1px 2px 0px rgba(50, 50, 50, 0.75);
+                box-shadow:          1px 1px 2px 0px rgba(50, 50, 50, 0.75);
+        input:checked + span.mult
+            -webkit-box-shadow: inset 1px 1px 2px 0px rgba(50, 50, 50, 0.75);
+            -moz-box-shadow:    inset 1px 1px 2px 0px rgba(50, 50, 50, 0.75);
+            box-shadow:         inset 1px 1px 2px 0px rgba(50, 50, 50, 0.75);
+            cursor: pointer
+        .price
+             background-color: red;
+.noValue
+    background-color: #80808030;
+.options.property
+    position: absolute;
+    background-color: #f9f9f9;
+    z-index: 100;
+    max-height: 15em;
+    overflow: auto;
+    cursor: pointer;
+    padding: 0em;
+    margin-top: -3em;
+    width: inherit;
+    table
+        width: 100%
+        tr
+            background-position: 50% 50%
+            background-size: 120%
+            td,th
+                background-color: #fffb;
+                padding-left 0.5em
+                .option
+                    .key
+                        width 25%
+                        font-weight: bold;
+                        text-aling left
+                        padding 0 0.5em
+                        display: inline-block
+                    .val
+                        /*width 55%/**/
+                        padding 0 0.5em
+                        display: inline-block
+                        font-size: 75%;
+                        letter-spacing: 0.0001em;
+            .priceN
+                    color red
+                    font-weight: bold;
+.blockZ
+         position: absolute;
+         margin: 1em;
+         margin-top: -30em;
+.formOrder
+         /*position 
+         top 0
+         left 0
+         height: max-content;
+         z-index 300
+         padding: auto;
+         padding-top 10%
+         border: solid/**/
+         border-radius: 1em;
+         background-image: url(/img/podlogka.svg);
+         background-position: center center;
+         background-size: cover;
+         background-color rgba(255,255,255,0.5)
+         text-align center
+         h2
+              font-size 1em
+         h3
+              font-size 1em
+         .red
+             border: 0.2em solid red;
+             border-radius: 0.3em;
+         label,input,div
+             display block
+             font-size 1.5em
+             margin: auto;
+         .sendButton
+             background-image: url(/img/podlogka.svg);
+             background-position: center center;
+             background-size: cover;
+             text-align center
+             margin: 0.5em auto;
+             box-shadow: 0 0 5px rgba(0,0,0,0.5)/**/
+             cursor: pointer
+             &:hover
+                  box-shadow: 0 0 10px rgba(0,0,0,0.5)/**/
+
+#main
+    display         flex
+    flex-direction  column
+    height          100%
+    header
+        background-image: -moz-linear-gradient(-90deg, #534751 0%, #53475100 100%);
+        background-image: -webkit-linear-gradient(-90deg, #534751 0%, #53475100 100%);
+        background-image: -ms-linear-gradient(-90deg, #534751 0%, #53475100 100%);
+        background-position: 50% 0.2%;
+        background-size: 8%;
+        position: fixed;
+        width: 100%;
+        left: 0;
+        z-index: 100;
+        padding 1em
+        .logo
+            background-size     8%
+            background-repeat   no-repeat
+            height: 9em;
+   
+        h1
+            width               auto
+            margin              1em 0
+            color white
+            text-align left
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            letter-spacing: 3px;
+            font-size           0.7em
+            b
+                font-size: 5.1em
+.politic
+     padding-top 3em
+     border-radius: 0.5em;
+     background-color white
+     padding 2em
+     h1,h2,h3
+        font-size 1.2em
+
+footer
+    padding-top 3em
+    text-align center
+    display: none
+    background-color rgba(0,0,0,0.7)
+    background-image    url(/img/logo.webp)
+    background-size     contain
+    height 15em
+    color white
+    width 100%
+    background-repeat   no-repeat
+    background-position   left
+    position absolute
+    left 0
+
+    
+@media only screen and (min-width: 320px)
+    body
+@media only screen and (min-width: 480px)
+    body
+@media only screen and (min-width: 600px)
+    body
+@media only screen and (min-width: 768px)
+    body
+        font-size: large;
+    #main
+        header
+            .logo
+                margin: 0 calc(50% - 350px)
+
+    .pMenu
+        background-color: unset;
+        font-size: 1em;
+        display: contents
+        position: auto;
+        width: max-content
+    menu
+        li
+            list-style: none
+            display   : inherit
+            padding   : 0 0.5em
+            font-size : 1.3em
+        &.main_menu
+            float     : left
+        &.user_menu
+            margin-top: -3em
+            float     : right
+    .order
+        margin: 0 1em;
+    .formOrder
+         display block
+         z-index 300
+         padding 10%
+         margin: 5%;
+    collection,.collection img 
+         height   40em
+
+.grey
+    font-size 0.7em
+    color grey
+h1
+    font-size 2.5em
+    text-align: left
+@media only screen and (min-width: 1024px)
+    body
+    #main
+        header
+            .logo
+                margin: 0 calc(50% - 500px)
+                background-image    url(/img/logo.webp)
+                h1
+                    text-align center
+    .g1
+        width: 23%
+    .basket
+        .name
+            span
+              display block
+        table
+            font-size 18px/**/
+            /*margin-left: -50em;/**/
+@media only screen and (min-width: 1280px)
+    body
+@media only screen and (min-width: 1400px)
+    body
+    #main
+        header
+            .logo
+                margin: 0 calc(50% - 700px)
+

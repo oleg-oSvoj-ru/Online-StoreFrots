@@ -1,0 +1,11 @@
+{
+    map: (doc)->
+        if doc.name
+            for i,item of doc.name
+                for k,v of doc.options[i]
+                    if k != "коллекция"
+                       item = item + ", " + v
+                for k,v of doc.options[i]
+                    emit [k, v],  {"url": item, "i": i}
+    reduce: '_count'
+}

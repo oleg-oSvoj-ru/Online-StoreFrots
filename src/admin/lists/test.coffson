@@ -1,0 +1,19 @@
+(head, req) ->
+      start headers: 'Content-Type': 'text/plain;charset=utf-8'
+      send '{"head":' + toJSON(head) + ', '
+      send '"req":' + toJSON(req) + ', '
+      send '"rows":['
+      row = undefined
+      prev = null
+      while row = getRow()
+        if prev != null and prev.key == row.key
+        else
+          if prev != null
+            send ','
+          send toJSON(
+            id: row.id
+            key: row.key)
+        prev = row
+      send ']}'
+      return
+

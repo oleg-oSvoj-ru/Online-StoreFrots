@@ -1,0 +1,14 @@
+extends main.pug
+block content
+    #blog.catalog
+        h1.g4(v-cloak)
+            a.grey(href="/") Начало
+            span.grey /
+            | {{ nameV }}
+        a.g2(  v-for="item of items" :href="'/'+nameV + '/' + item.doc._id")
+                .razdel(:style="'background-image: url(\"/id/' + item.doc._id + '/img/001.webp\")'" v-cloak)
+                    h3(v-html="item.doc.name[0]" v-cloak)
+                        p(v-if="item.doc.description[0]" v-html="item.doc.description[0]" v-cloak)
+block system
+block script
+        script(src="/js/blogV.js")

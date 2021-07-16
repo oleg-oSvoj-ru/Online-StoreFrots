@@ -1,0 +1,35 @@
+[
+  {
+    "from"  : "/pages/all"
+    "to"    : "/_list/pages/recent-changes"
+    "query" : {
+      "descending" : true
+    }
+  }
+  {
+    "from"  : "/id/*"
+    "to"    : "../../*"
+  }
+  {
+    "from"  : ""
+    "to"    : "/index.html"
+  }
+  {
+    "from"  : "index"
+    "to"    : "/_show/pages/index"
+  }
+  {
+    "from"  : "/\*/:id"
+    "to"    : "/produckt.html"
+  }
+  {
+    "from"  : encodeURI "/Политика"
+    "to"    : "/politic.html"
+  }
+  { from: '/not-found', to: '_show/not_found' },
+  {
+      "from": "/*"
+      "to": "/*"
+  }
+]
+ 

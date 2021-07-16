@@ -1,0 +1,18 @@
+extends index.pug
+block content
+        span.basket(v-cloak)
+            +basket
+        .formOrder.g3
+            .form(v-if="!order" v-cloak)
+                    h2.g4 Отправить Заявку
+                    label.g4 Ваше имя:
+                    input#name.g4(type="text" v-model="name" v-bind:class="{ red: red }" name="name") 
+                    label.g4 Номер телефона:
+                    input#phone.g4(type="text" v-model="phone" v-bind:class="{ red: red }" name="phone" )
+                    .sendButton.g4(v-on:click="sendClick()") Отправить
+            h2.g4(v-if="order" v-cloak) Спасибо
+                        br 
+                        | Мы свяжемся с Вами в ближайшее время
+block system
+block script
+        script(src="/js/orderV.js")

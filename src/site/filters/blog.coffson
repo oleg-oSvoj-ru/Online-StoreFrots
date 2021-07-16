@@ -1,0 +1,2 @@
+(doc, req) ->
+    return doc.type

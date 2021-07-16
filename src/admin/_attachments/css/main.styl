@@ -1,0 +1,392 @@
+body
+    font-family Roboto, Arial, sans-serif
+    font-size 12px/**/
+    width 100%
+    background-image none /**/
+.hide
+    display none
+#menu
+        max-width 1280px
+        margin auto
+[v-cloak]
+    display: none
+
+#basket
+    span
+        cursor: pointer
+    table
+        position: absolute;
+        width: 100%;/**/
+        /*margin-left: -50em;/**/
+        top 2em
+        left 0
+        background-color:
+        rgba(255,255,255,0.9);
+        z-index: 10;
+        border-radius: 0.3em;
+        font-size 1em
+        border: 1em solid rgba(255,255,255,.01);
+        tr
+            /*border-bottom: 1px solid #333;/**/
+            border-left: 1em solid lightgray;
+            border-radius: 5px;
+            border-right: 1em solid lightgray;
+            &.noline
+                background none
+            td
+                height: 3em;
+                padding 0.3em
+            .c3
+                width 70%
+            .c4
+                width 30%/**/
+            
+        .img
+            width:    20%
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        .name
+            pass
+        .price,.summ
+            font-size 1em
+            background none
+            color black
+            width: 9em;
+            text-align right
+            &::before
+                content ""
+                font-size 0.8em
+            &::after
+                content " руб."
+                font-size 0.8em
+        .count
+            text-align right
+            width: 2em;
+        .order
+            margin 0
+            float right
+        .updw
+            color blue
+            font-size 1.5em
+            teext-align left
+            cursor: pointer
+            .minus
+                line-height: 0.5em;
+                vertical-align: top;
+                padding-top 0em
+            .plus
+                line-height: 0.5em;
+                padding-bottom 0em
+                vertical-align: bottom;
+            span
+                padding 0.5em
+                &:hover
+                    color red
+        .itog
+            text-align right
+            &.sum
+                &::after
+                    content " руб."
+                    font-size 0.8em
+menu
+    li
+         list-style: none
+         display inherit
+         padding 0 0.5em
+         font-size: 1.3em
+    &.main_menu
+         margin auto
+         text-align center
+    &.user_menu
+         margin auto
+         text-align center
+         li
+             margin: 0 0.5em;
+             background-position: left center;
+             background-size: contain;
+             background-repeat: no-repeat;
+             &.basket
+                  padding-left 1.7em
+                  width  auto
+content
+    min-height: 60em;
+.catalog
+    h2
+        text-align center
+        font-size: 2em;
+        margin 1%
+        margin-top 3%
+    h3
+        text-align center
+        font-size: 1.2em;
+        margin: 1% auto;
+        padding: 0.3em;
+        background-image: url(/img/podlogka.svg);
+        background-position: center;
+        background-size: cover;
+        height: max-content;
+        position: absolute;
+        margin-top: -5em;
+        width: 98%;
+    h3.raz
+        text-align center
+        font-size: 3.5em;
+        padding: 0.3em;
+        background-image: url(/img/podlogka.svg);
+        background-position: center;
+        background-size: cover;
+    .razdel
+        padding-top: 35em;
+        background-image: url(/id/8667/orig_1.webp);
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-color: white;
+        border-radius: 0.5em;
+        height: min-content;
+        &.ff
+            background-size: cover;
+    .price
+        position: absolute;
+        margin-top: -10em;
+     .deskription
+        max-height: 21em;
+        height: min-content;
+        p
+           height: min-content;
+
+.price
+        background-image: url(/img/podlogkaRed.svg);
+        background-position: center; 
+        text-align: center;
+        font-size: 2em;
+        width: max-content;
+        margin auto
+        padding: 0.5em;
+        background-size: 190% 190%;
+        color: white;
+        &::before
+           content "цена: "
+           font-size 0.8em
+        &::after
+           content " руб."
+           font-size 0.8em
+.order
+        font-size: 2em;
+        text-align: center;
+        width: max-content;
+        background-image: url(/img/podlogka.svg);
+        background-position: center center;
+        background-size: cover;
+        box-shadow: 0 0 5px rgba(0,0,0,.5);
+        padding: 0.5em 1em;
+        margin 0 auto
+        cursor: pointer
+        &:hover
+            box-shadow: 0 0 10px rgba(0,0,0,.5)/**/
+.collection
+    height   11em
+    padding-top: 33em;
+    background-image: url(/id/8667/orig_1.webp);
+    background-size: cover;
+    background-position: center center;
+    border-radius: 0.5em;
+    display none
+    &:first-child
+        display block
+    .watermark
+        position: absolute;
+        height: 70%;
+        float: right;
+        display: block;
+        top: 30%;
+        right: 10%;
+    .left,.right
+           height: 5em;
+           margin-top: -15em;
+           border-radius 50%
+           box-shadow: 0 0 5px rgba(0,0,0,0.5)/**/
+           cursor: pointer
+           &:hover
+               box-shadow: 0 0 10px rgba(0,0,0,0.5)/**/
+    .left
+           float: right;
+           margin-right: -2em;
+    .right
+           float: left;
+           margin-left: -2em;
+    h2
+        text-align center
+        font-size: 1.5em;
+        margin: 0.5em auto;
+        padding: 0.3em;
+        width: max-content;
+        background-image: url(/img/podlogka.svg);
+        background-position: center;
+        background-size: cover;
+        max-width: 98%;
+.deskription
+        text-align center
+        margin auto
+        width 90%
+        font-size: 1.2em;
+        max-height: 4.5em;
+        overflow: hidden;
+        margin: 0.5em auto;
+        padding: 0.3em;
+        background-image: url(/img/podlogka.svg);
+        background-position: center; 
+        background-size: cover;
+        dysplay: none
+.imgFull
+        position: fixed;
+        top 0
+        left 0
+        width 100%
+        height 100%
+        background-color rgba(0,0,0,0.5)
+        text-align center
+        line-height 100%
+        img
+           height 80%
+           margin-top: 5%;
+.producktImg
+        padding-top: 35em;
+        background-image: url(/id/8667/orig_1.webp);
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-color: white;
+        border-radius: 0.5em;
+        height: 1em;
+.producktData
+        h2
+             font-size: 1.5em;
+             text-align left
+        .deskription
+             text-align justify
+             height auto
+        .price
+             background-color: red;
+.blockZ
+         position: absolute;
+         margin: 1em;
+         margin-top: -30em;
+.formOrder
+         /*position 
+         top 0
+         left 0
+         height: max-content;
+         z-index 300
+         padding: auto;
+         padding-top 10%
+         border: solid;/**/
+         border-radius: 1em;
+         background-image: url(/img/podlogka.svg);
+         background-position: center center;
+         background-size: cover;
+         background-color rgba(255,255,255,0.5)
+         text-align center
+         h2
+              font-size 1em
+         h3
+              font-size 1em
+         .red
+             border: 0.2em solid red;
+             border-radius: 0.3em;
+         label,input,div
+             display block
+             font-size 1.5em
+             margin: auto;
+         .sendButton
+             background-image: url(/img/podlogka.svg);
+             background-position: center center;
+             background-size: cover;
+             text-align center
+             margin: 0.5em auto;
+             box-shadow: 0 0 5px rgba(0,0,0,0.5)/**/
+             cursor: pointer
+             &:hover
+                  box-shadow: 0 0 10px rgba(0,0,0,0.5)/**/
+#main
+    display         flex
+    flex-direction  column
+    height          100%
+    header
+        h1
+            background-image    url(/img/logo.svg)
+            background-size     contain
+            background-repeat   no-repeat
+            font-size           1em
+            padding-left        6em
+            width               max-content
+            margin              1em auto
+.politic
+     padding-top 3em
+     border-radius: 0.5em;
+     background-color white
+     padding 2em
+     h1,h2,h3
+        font-size 1.2em
+
+footer
+    padding-top 3em
+    text-align center
+    background-color rgba(0,0,0,0.7)
+    background-image    url(/img/watermark.png)
+    background-size     contain
+    height 15em
+    color white
+    width 100%
+    background-repeat   no-repeat
+    background-position   left
+
+    
+@media only screen and (min-width: 320px)
+    body
+@media only screen and (min-width: 480px)
+    body
+@media only screen and (min-width: 600px)
+    body
+@media only screen and (min-width: 768px)
+    body
+    #main
+        header
+            h1
+                font-size           2em
+
+@media only screen and (min-width: 768px)
+    body
+    menu
+        li
+             list-style: none
+             display inherit
+             padding 0 0.5em
+             font-size: 1.3em
+        &.main_menu
+             float: left
+        &.user_menu
+             float: right
+    .order
+        margin: 0 1em;
+    .formOrder
+         display block
+         z-index 300
+         padding 10%
+         margin: 5%;
+    collection,.collection img 
+         height   40em
+    #basket
+        table
+            top 2em
+            left auto
+            position: absolute;
+            width: 50em;/**/
+            margin-left: -50em;/**/
+@media only screen and (min-width: 1024px)
+    body
+@media only screen and (min-width: 1280px)
+    body
+@media only screen and (min-width: 1400px)
+    body

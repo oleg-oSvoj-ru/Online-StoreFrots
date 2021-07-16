@@ -1,0 +1,57 @@
+mixin menu-item(link,title)
+    a(href=link)
+       li(style!=attributes.style class!=attributes.class)  #{title}
+mixin menu-itemB(link,title)
+    span
+       li(style!=attributes.style class!=attributes.class)  #{title}
+
+
+mixin menu_main
+    //menu.g3.main_menu
+    //    each item in main.menu
+    //         +menu-item(item.href,item.name)
+    menu.g4.user_menu
+        a(href="tel:+74950056254")
+            .phone +7 495 00 56254
+        span#vMenu(v-cloak )
+            span.pMenu(v-if="show")
+                a( v-for="item in menuI" :key="item.key" :href="'/'+item.key")
+                    li {{ item.key }}
+                //each item in main.menu
+                //   +menu-item(item.href,item.name)
+                //+menu-item("#Поиск",  "")(style="background-image: url(/img/picto/search.svg)")
+                //+menu-item("#Консультация","")(style="background-image: url(/img/picto/phone.svg)")
+                +menu-item("/Блог","Блог") //(style="background-image: url(/img/picto/phone.svg)")
+            span#menuButton(v-bind:style="'background-image: url('+pictoM+')'" v-on:click="pict(); show = !show " ) &nbsp;
+        span.basket(v-cloak)
+                span#basketButton(style="background-image: url(/img/picto/basket_k-white.svg)" v-on:click="show = !show " ) {{ count }}
+                //+menu-itemB("#Корзина","{{ count }}" )( style="background-image: url(/img/picto/basket_k-white.svg)" class="basket" v-on:click="show = !show")
+                +basket
+mixin menu_top
+    menu.top_menu(v-cloak )
+        each item in main.topMenu
+             +menu-item(item.href,item.name)    
+            
+        
+mixin basket
+          table.g2(v-cloak v-if="show")
+            tr.row(v-for="item of items")
+                    td.img( v-bind:style="'background-image: url(\"/id/' + item._id + '/' + item.artikul[item.position] + '/000.webp\")'" )
+                    td.name {{ item.name[item.position] }}
+                        span(v-for="(key,val) of item.options[item.position]") {{ val }} : {{ key }}
+                    td.price(v-html="probel(item.price[item.position])")
+                    td.count(v-html="item.count")
+                    td.updw
+                        span.plus(v-on:click="ClickPlus(item._id + '__' + item.position)") +
+                        br
+                        span.minus(v-on:click="ClickMinus(item._id + '__' + item.position)") &#8211;
+                    td.summ(v-html="probel(item.count*item.price[item.position])")
+            tr.itog.noline
+                   th.itog(colspan="3") Итого:
+                   td.itog.sum(v-html="probel(summ)" colspan="3")
+            tr.noline
+                   td(colspan="2") 
+                   td(colspan="4") 
+                       a(href="/Заказ" v-if="!order")
+                           .order Отправить заявку
+          .close(v-cloak v-if="show" v-on:click="show = false")

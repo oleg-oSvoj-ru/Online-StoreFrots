@@ -1,0 +1,8 @@
+{
+    map: (doc)->
+        if doc.type='product'
+            for item,i in doc.artikul
+                  emit doc.name[i], i
+        else if doc.type='blog'
+            emit doc.name, 0
+}

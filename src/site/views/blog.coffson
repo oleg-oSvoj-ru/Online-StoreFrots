@@ -1,0 +1,6 @@
+{
+    map: (doc)->
+        if doc.type == "blog"
+            emit doc
+    reduce: '_count'
+}

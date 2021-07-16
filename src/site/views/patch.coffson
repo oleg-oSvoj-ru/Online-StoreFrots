@@ -1,0 +1,12 @@
+{
+    map: (doc)->
+        if doc.name and doc.group
+            for i,item of doc.name
+                for k,v of doc.options[i]
+                    if k not in ["кол-во мест","гарантийный срок","отв. д/монтажа","склад","старый артикул","color","интернет магазин","тип упаковки","логистика","ставка ндс"]
+                       item = item + ", " + v
+                emit item, i
+                emit doc.name[i], i
+                emit doc.id, doc.defaultPosition
+    reduce: '_count'
+}

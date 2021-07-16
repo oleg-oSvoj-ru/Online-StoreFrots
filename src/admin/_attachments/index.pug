@@ -1,0 +1,84 @@
+- main = {}
+- main = locals.req( './src/site/_attachments/main.json')
+include ./mixin/main.pug
+doctype html
+html
+    head
+        title German Design - Студия немецкой мебели
+        link(rel="stylesheet" href="/css/normalize.css")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+        meta(charset="utf-8")
+    body
+        #main
+           header
+              +logo
+              +menu_main
+           content
+             block content
+              #slide.g4
+                 .collection(v-cloak v-for="item of items" v-bind:style="'background-image: url(\"/id/' + item.value._id + '/orig_1.webp\")'")
+                     .blockZ
+                         a(href="/Заказ")
+                             .order Получить консультацию
+                         p.price {{item.value.price}}
+                     img.left(src="/img/left.svg" @click="slideClick('Left')")
+                     img.right(src="/img/right.svg" @click="slideClick('Right')")
+                     img.watermark(src="/img/watermark.png")
+                     h2(v-html="item.value.name[0]")
+                     .deskription(v-html="item.value.description[0]")
+              .catalog.g4
+                  h2.g4 Каталог мебели
+                  a.g2(href="/Гостиные")
+                      .razdel.ff(src="/_view/catalogGostinnie" style='background-image: url("/id/6895/orig_1.webp");')
+                         h3.raz Гостиные
+                  a.g2(href="/Детские")
+                      .razdel.ff(src="/_view/catalogDetskie" style='background-image: url("/id/6500/orig_1.webp");')
+                         h3.raz Детские
+                  a.g4(href="/Спальни")
+                      .razdel.ff(src="/_view/catalogSpalni" style='background-image: url("/id/5978/orig_1.webp");')
+                         h3.raz Спальни
+                  h2.g4 Элементы мебели
+                  a.g1(href="/Шкафы")
+                      .razdel(src="/_view/catalogShkafi" style='background-image: url("/id/7801/orig_1.webp");')
+                         h3.raz Шкафы
+                  a.g1(href="/Колонки")
+                      .razdel(src="/_view/catalogKolonki" style='background-image: url("/id/9649/orig_1.webp");')
+                         h3.raz Колонки
+                  a.g1(href="/Тумбы")
+                      .razdel(src="/_view/catalogTumbi" style='background-image: url("/id/9561/orig_1.webp");')
+                         h3.raz Тумбы
+                  a.g1(href="/Столы")
+                      .razdel(src="/_view/catalogStoli" style='background-image: url("/id/10518/orig_1.webp");')
+                         h3.raz Столы
+                  a.g1(href="/Кровати")
+                      .razdel(src="/_view/catalogKrovati" style='background-image: url("/id/9208/orig_1.webp");')
+                         h3.raz Кровати
+                  a.g1(href="/Полки")
+                      .razdel(src="/_view/catalogPolki" style='background-image: url("/id/12355/orig_1.webp");')
+                         h3.raz Полки
+        footer
+               hr
+               h4 Дополнительная информация
+               ul
+                  li
+                     a(href="/Политика") Политика конфиденциальности
+        .system.g4.hide
+             block system
+                 .formOrder.g4.hide
+                   .form
+                     h2.g3 Получить консультацию по комплекту:
+                     h3.g3 
+                     label.g3 Ваше имя:
+                     input#name.g3(type="text" name="name") 
+                     label.g3 Номер телефона:
+                     input#phone.g3(type="text" name="phone")
+                     .sendButton.g3 Получить консультацию
+                           table.basket.hide
+
+        link(rel="stylesheet" href="/css/template.css")
+        link(rel="stylesheet" href="/css/main.css")
+        script(src="/js/libVjs.js")
+        script(src="//cdn.jsdelivr.net/pouchdb/latest/pouchdb.min.js")
+        script(src="/js/mainV.js")
+        block script
+           script(src="/js/indexV.js")

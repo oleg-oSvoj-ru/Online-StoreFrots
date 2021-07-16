@@ -1,0 +1,15 @@
+(head, req) ->
+      start headers: 'Content-Type': 'text/plain;charset=utf-8'
+      send 'type\tid\tname\tdescription\tartikul\trealPrice\tprice\tgroup\toptions\tcomplekt\n'
+
+      while row = getRow()
+          i   = row.value
+          doc = row.doc
+          options = ""
+          for key,val of doc.options[i]
+              options = options + key + ":" + val + "|"
+          if not row.type
+               row.type = 'product'
+          send row.type + '\t' + row.id + '\t' + doc.name[i]+'\t'+doc.description[i]+'\t'+doc.artikul[i]+'\t'+doc.realPrice[i]+'\t'+doc.price[i]+'\t'+doc.group+'\t'+options+'\t'+doc.complekt[i]+'\n'
+
+

@@ -1,0 +1,19 @@
+extends index.pug
+block content
+      #catalog.catalog
+          h1.g4(v-cloak)
+            a.grey(href="/") Начало
+            span.grey /
+            | {{ nameV }}
+          a.g2(v-cloak v-for="item of items" v-bind:href="'/'+nameV +'/'+ item.value.url")
+               .razdel(v-bind:style="'background-image: url(\"/id/' + item.doc._id + '/' + item.doc.artikul[item.value.i] + '/000.webp\")'")
+                 //.order B Корзину
+                 p.price {{item.doc.price[item.value.i]}}
+                 h3(v-html="item.doc.name[item.value.i]")
+                 //.deskription.hide(v-html="item.doc.description[item.value.i]")
+block system
+                .template.hide
+
+block script
+        script(src="/js/catalogV.js")
+

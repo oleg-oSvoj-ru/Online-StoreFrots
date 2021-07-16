@@ -1,0 +1,32 @@
+extends index.pug
+block content
+        #produckt
+            h1.g4( v-cloak)
+                a.grey(href="/") Начало
+                span.grey /
+                a.grey(href="/Блог") Блог
+                span.grey /
+                | {{ nameV }}
+            div.g4
+                .imgFull( v-cloak v-if="showImg" @click="showImg = !showImg")
+                    img( v-bind:src="'/id/'+item.id+'/img/' + img " )
+                .img.g2
+                    .producktImg(v-bind:style="'background-image: url(\"/id/' +item._id + '/img/' + img + '\")'" v-cloak @click="showImg = !showImg")
+                .producktData.g2(v-cloak)
+                        h2(v-html="item._id" v-cloak)
+                        .deskription(v-if="item.description[0]" v-html="item.description[0]" v-cloak)
+                        .text(v-if="item.text" v-html="item.text" v-cloak)
+
+            div.g4.catalog(v-cloak v-if="articulData ")
+                h2 Товары по теме:
+                a.g1( v-for="(v,k) of articulData" v-bind:id="k[v.p]"  v-bind:href="'/' + v.group + '/' + k " )
+                    .razdel(v-bind:style="'background-image: url(\"/id/' + v.id + '/' + v.artikul[v.p] + '/000.webp\")'")
+                        p.price {{v.price[v.p]}}
+                        h3(v-html="v.name[v.p]")
+
+block system
+                .template.hide
+
+block script
+        script(src="/js/pageV.js")
+

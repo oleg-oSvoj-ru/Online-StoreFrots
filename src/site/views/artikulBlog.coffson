@@ -1,0 +1,12 @@
+{
+    map: (doc)->
+        if doc.type == "blog"
+            for i,item of doc.produckt
+                  for k,v of item
+                     a = []
+                     a.push v
+                     for i in doc.teg[0]
+                         a.push i
+                     emit a
+    reduce: '_count'
+}
